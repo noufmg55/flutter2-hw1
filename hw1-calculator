@@ -1,0 +1,58 @@
+import 'dart:io';
+main(){
+print("welcome to my calculator app");
+
+int num1,num2,operation;
+String next_calculation="no";
+
+do{
+//take input from the user
+print("Enter first number");
+num1=int.parse(stdin.readLineSync()!);
+
+print("Enter second number");
+num2=int.parse(stdin.readLineSync()!);
+
+String message='''
+Select operation:
+1.Add
+2.Subtract
+3.Multiply
+4.Divide
+Choose number from 1 to 4 : ''';
+
+print(message);
+operation=int.parse(stdin.readLineSync()!);
+
+
+if(operation == 1){
+print(" the summation =  ${num1+num2}");
+}
+
+else if (operation == 2){
+print(" the subtraction =  ${num1-num2}");
+}
+
+else if (operation == 3){
+print(" the multiplication =   ${num1*num2}");
+}
+
+else if (operation == 4){
+print(" the division = ${num1/num2}" );
+}
+
+else{
+print("Invalid input.. Please enter a number from 1 to 4 ");
+}
+
+
+//check if user wants another calculation
+print("Let's do next calculation? (yes/no): "); 
+next_calculation =stdin.readLineSync()!;
+
+
+}while(next_calculation=="yes");
+
+
+}
+
